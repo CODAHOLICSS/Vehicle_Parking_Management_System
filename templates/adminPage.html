@@ -1,0 +1,110 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Vehicle Parking Management System - Admin Page</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+		<style>
+		  body {
+		    background-image: url('https://blog.aplan.co.uk/wp-content/uploads/2022/10/underground-car-park-scaled.jpg');
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		  }
+
+		   h1 {
+				color: #00FFFF;
+		   }
+
+
+		  body {
+			font-family: 'Montserrat', sans-serif;
+		  }
+		  .navbar-brand {
+			font-weight: 700;
+			font-size: 24px;
+		  }
+		  .nav-link {
+			font-weight: 700;
+			font-size: 18px;
+		  }
+		  .card {
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			transition: transform 0.2s ease-in-out;
+		  }
+		  .card:hover {
+			transform: translateY(-10px);
+		  }
+		  .card-title {
+			font-weight: 700;
+			font-size: 24px;
+		  }
+		  .card-text {
+			font-size: 18px;
+		  }
+		  .btn-primary {
+			background-color: #007bff;
+			border-color: #007bff;
+			font-weight: 700;
+		  }
+		  .btn-primary:hover {
+			background-color: #0062cc;
+			border-color: #0062cc;
+		  }
+		</style>
+	  </head>
+	  <body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand text-primary" href="#">Vehicle Parking Management System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class = "nav-link text-info" a href="{% url 'parkingapp:login' %}">ADMIN</a>
+				</li>
+				<li class = "nav-item">
+					<a class = "nav-link text-info" href = "{% url 'parkingapp:userSignup' %}"> USER</a>
+				</li>
+
+			</ul>
+			<ul class="navbar-nav">
+
+			</ul>
+		</div>
+		</nav>
+
+
+		<div class="container mt-5">
+		  <h1 class="text-center mb-5"><strong>Time to put your parking skills to the test, admin! Those spots aren't going to manage themselves, so get cracking!</strong></h1>
+
+
+		  <div class="row">
+			<div class="col-md-4">
+			  <div class="card">
+				<div class="card-body">
+				  <h5 class="card-title">Parking Lots</h5>
+				  <p class="card-text">"Hey, parking guru! Time to channel your inner SimCity mayor and manage those parking lots like a pro. Add, edit, and delete them like you're building your own parking empire!"</p>
+				  <a href="#" class="btn btn-primary">Manage Parking Lots</a>
+				</div>
+			</div>
+		</div>
+	<div class="col-md-4">
+	<div class="card">
+	<div class="card-body">
+	<h5 class="card-title">Customers</h5>
+	<p class="card-text">"It's time to play matchmaker and manage those customers in the system. Add, edit, and delete them like it's Tinder!"</p>
+	<a href="#" class="btn btn-primary">Manage Customers</a>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+
+	  </body>
+	</html>
