@@ -1,21 +1,19 @@
+from django.contrib.auth.hashers import make_password, check_password
 from django.db import models
-
-# Create your models here.
-
-
-# Create your models here.
-from django.db import models
-
-# Create your models here.
+# from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
 class UserProfiles(models.Model):
     full_name=models.CharField(max_length=200)
     phone_number=models.IntegerField()
-    email=models.CharField(max_length=120)
-    password=models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.full_name
-
+    email=models.CharField(unique=True,max_length=20)
+    password=models.CharField(max_length=200)
+    # is_active = models.BooleanField(default=True)
+    # is_staff = models.BooleanField(default=False)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['full_name', 'phone_number']
+    def set_password(self, password):
+        self.password = make_password(password)
+    def check_password(self, password):
+        return check_password(password, self.password)
 class Vehicles(models.Model):
     vehicle_name=models.CharField(max_length=200)
     plate_number=models.CharField(max_length=10)

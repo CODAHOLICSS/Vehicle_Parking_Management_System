@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,40 +7,8 @@
     <title>Vehicle Parking Management System - User Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-image: url('https://blog.aplan.co.uk/wp-content/uploads/2022/10/underground-car-park-scaled.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-	  h1 {
-			color: #00FFFF;
-	  }
-	  body {
-		font-family: 'Montserrat', sans-serif;
-	  }
-	  .navbar-brand {
-		font-weight: 700;
-		font-size: 24px;
-	  }
-	  .nav-link {
-		font-weight: 700;
-		font-size: 18px;
-	  }
-	  .form-group label {
-		font-weight: 700;
-		font-size: 18px;
-	  }
-	  .btn-primary {
-		background-color: #007bff;
-		border-color: #007bff;
-		font-weight: 700;
-	  }
-	  .btn-primary:hover {
-		background-color: #0062cc;
-		border-color: #0062cc;
-	  }
-	</style>
+    <link rel="stylesheet" href="{% static 'styles/loginstyle.css' %} ">
+
 	</head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,15 +16,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-                 
-        </ul>
-        <ul class="navbar-nav">
-          
-        </ul>
-      </div>
-    </nav>
+         </nav>
     <div class="container mt-5">
       <h1 class="text-center mb-5"><em><strong>Welcome to the Vehicle Parking Management System</strong></em></h1>
       <div class="row">
@@ -63,15 +24,24 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title text-center">User Login</h5>
-              <form>
+              <form action="{% url 'parkingapp:userLogin' %}" method="POST">
+              {% csrf_token %}
                 <div class="form-group">
                   <label for="email">Email Address</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                  <input type="email" class="form-control" id="email"  name='email' placeholder="Enter your email address">
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
                 </div>
+
+                      {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
               </form>
               <div class="text-center">
@@ -84,6 +54,7 @@
 			</div>
 			</div>
 			</div>
+   <script src="{% static 'js/loginscript.js' %}"></script>
 			</body>
 			</html>
 
