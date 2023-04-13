@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
+STRIPE_SECRET_KEY = 'sk_test_51MqtvzFusiNrsCucU3bgpxrxGUuNyaRvlwMcyrGUpyiX7eSokC5F0DHNJkN4369fo7u1To0xS4vhuPEFsumCqPFL00z2Sr4aqP'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51MqtvzFusiNrsCuczycZ7jPSthwM5uMy2BRKLR95kTwXJkOkM3kuFbaRoO5UxQReWBluJ4sbXN5Gh9zsrbowVq8200U2FXFi95'
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-     'parkingapp',
+    'parkingapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,9 +82,9 @@ WSGI_APPLICATION = 'parkingproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vehicle_parking_database',
-        'USER':'admin',
-        'PASSWORD':'admin',
+        'NAME': 'test_system',
+        'USER':'root',
+        'PASSWORD':'root_toor',
     }
 }
 
@@ -129,9 +134,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTHENTICATION_BACKENDS = [
-    'parkingapp.backends.UserProfileBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
+#AUTHENTICATION_BACKENDS = [
+ #   'path.to.EmailBackend',
+  #  'django.contrib.auth.backends.ModelBackend',
+#]
+
 LOGIN_REDIRECT_URL = '/DashboardPage/'
 LOGOUT_REDIRECT_URL = '/userLogin/'
+

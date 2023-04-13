@@ -1,15 +1,15 @@
 from django.urls import path
 from . import views
+
 app_name='parkingapp'
+
 urlpatterns = [
     path('', views.index, name='index'),
-    path('login/', views.login, name='login'),
-    path('dash/', views.dash, name='dash'),
-    # path('index/', views.login, name='login'),
+    path('loginadmin/', views.loginadmin, name='loginadmin'),
     path('userLogin/', views.userLogin, name='userLogin'),
-    # path('userLoginPage/', views.loginPage, name='user_login_page'),
-    path('userPage/', views.userPage, name='user_page_view'),
     path('userSignup/', views.userSignup, name='userSignup'),
-
-
+    path('DashboardPage/',views.DashboardPage,name='DashboardPage'),
+    path('exit_vehicle/', views.exit_vehicle, name='exit_vehicle'),
+    path('payment_success/', views.payment_success, name='payment_success'), # add this line
+    path('reservation/<int:reservation_id>/payment/', views.payment_view, name='payment'),
 ]

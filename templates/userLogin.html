@@ -1,7 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Vehicle Parking Management System - User Login</title>
@@ -9,52 +10,50 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/loginstyle.css' %} ">
 
-	</head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand text-primary" href="#">Vehicle Parking Management System</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-         </nav>
-    <div class="container mt-5">
-      <h1 class="text-center mb-5"><em><strong>Welcome to the Vehicle Parking Management System</strong></em></h1>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-center">User Login</h5>
-              <form action="{% url 'parkingapp:userLogin' %}" method="POST">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand text-primary" href="#">Vehicle Parking Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+  </nav>
+  <div class="container mt-5">
+    <h1 class="text-center mb-5"><em><strong>Welcome to the Vehicle Parking Management System</strong></em></h1>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">User Login</h5>
+            <form action="{% url 'parkingapp:userLogin' %}" method="POST">
               {% csrf_token %}
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" class="form-control" id="email"  name='email' placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" name='email' placeholder="Enter your email address">
+              </div>
+              <div class="form-group">
                   <label for="password">Password</label>
                   <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
-                </div>
+              </div>
 
-                      {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-              </form>
-              <div class="text-center">
-			  
-			<p class="text-center">Don't have an existing account? <a href="{% url 'parkingapp:userSignup' %}" class="btn btn-link">Sign up here</a></p>
-			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-   <script src="{% static 'js/loginscript.js' %}"></script>
-			</body>
-			</html>
+              {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                  <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+              {% endif %}
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <div class="text-center">
+                <p class="text-center">Don't have an existing account? <a href="{% url 'parkingapp:userSignup' %}" class="btn btn-link">Sign up here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/loginscript.js' %}"></script>
+</body>
 
+</html>
