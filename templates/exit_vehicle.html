@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+    <title>Log in | Django site admin</title>
+    <link rel="stylesheet" href="/static/admin/css/base.css">
+    <link rel="stylesheet" href="/static/admin/css/dark_mode.css">
+    <link rel="stylesheet" href="/static/admin/css/nav_sidebar.css">
+    <script src="/static/admin/js/nav_sidebar.js" defer></script>
+    <link rel="stylesheet" href="/static/admin/css/login.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/static/admin/css/responsive.css">
+    <meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    {% for reservation in reservations %}
+        <input type="radio" id="reservation_{{ reservation.id }}" name="reservation_id" value="{{ reservation.id }}">
+        <label for="reservation_{{ reservation.id }}">{{ reservation.vehicle_id }}</label><br>
+    {% endfor %}
+    <input type="submit" value="Exit Vehicle">
+    </form>
+    
+<body>
