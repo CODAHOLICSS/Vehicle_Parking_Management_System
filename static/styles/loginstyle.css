@@ -1,0 +1,32 @@
+ body {
+        background-image: url('https://blog.aplan.co.uk/wp-content/uploads/2022/10/underground-car-park-scaled.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+	  h1 {
+			color: #00FFFF;
+	  }
+	  body {
+		font-family: 'Montserrat', sans-serif;
+	  }
+	  .navbar-brand {
+		font-weight: 700;
+		font-size: 24px;
+	  }
+	  .nav-link {
+		font-weight: 700;
+		font-size: 18px;
+	  }
+	  .form-group label {
+		font-weight: 700;
+		font-size: 18px;
+	  }
+	  .btn-primary {
+		background-color: #007bff;
+		border-color: #007bff;
+		font-weight: 700;
+	  }
+	  .btn-primary:hover {
+		background-color: #0062cc;
+		border-color: #0062cc;
+	  }

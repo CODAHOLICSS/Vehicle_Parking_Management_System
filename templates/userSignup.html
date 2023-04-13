@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,28 +69,39 @@
 		  <div class="card">
 			<div class="card-body">
 			  <h5 class="card-title text-center">User Sign-up</h5>
-			  <form>
+			  <form method="post">
+				  {% csrf_token %}
 				<div class="form-group">
-				  <label for="fullName">Full Name</label>
-				  <input type="text" class="form-control" id="full_name" placeholder="Enter your full name">
+					{{form.full_name.label_tag}}
+					{{form.full_name}}
+<!--				  <label for="fullName">Full Name</label>-->
+<!--				  <input type="text" class="form-control" id="full_name" placeholder="Enter your full name">-->
 				</div>
 
 				<div class="form-group">
-						<label for="phoneNumber">Phone Number</label>
-							<input type="text" class="form-control" id="phone_number" placeholder="Enter your phone number without country code">
+					{{form.phone_number.label_tag}}
+					{{form.phone_number}}
+<!--						<label for="phoneNumber">Phone Number</label>-->
+<!--							<input type="text" class="form-control" id="phone_number" placeholder="Enter your phone number without country code">-->
 				</div>
 
 				<div class="form-group">
-						<label for="emailAddress">Email</label>
-							<input type="text" class="form-control" id="email" placeholder="Enter your Email Address">
+					{{form.email.label_tag}}
+					{{form.email}}
+<!--						<label for="emailAddress">Email</label>-->
+<!--							<input type="text" class="form-control" id="email" placeholder="Enter your Email Address">-->
 				</div>
 
 				<div class="form-group">
-				  <label for="password">Create Password</label>
-				  <input type="text" class="form-control" id="password" placeholder="Create your Unique Password">
+					{{form.password.label_tag}}
+					{{form.password}}
+<!--				  <label for="password">Create Password</label>-->
+<!--				  <input type="text" class="form-control" id="password" placeholder="Create your Unique Password">-->
 				</div>
 				<button type="submit" class="btn btn-primary btn-block">Submit</button>
-					</form>
+
+			  </form>
+
 			  <p class="text-center">Already have an existing account? <a href="{% url 'parkingapp:userLogin' %}" class="btn btn-link">Login here</a></p>
 			</div>
 		  </div>

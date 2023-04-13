@@ -1,0 +1,32 @@
+.messages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.messages .success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.messages .warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.messages .error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+
+
+
+
+
