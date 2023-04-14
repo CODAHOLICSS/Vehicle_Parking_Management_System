@@ -279,6 +279,18 @@ def update_parking_reservation_booking_is_paid(sender, instance, **kwargs):
 
 
 
+class UserPayment(models.Model):
+	app_user = models.ForeignKey(CustomerProfile, on_delete=models.CASCADE)
+	payment_bool = models.BooleanField(default=False)
+	stripe_checkout_id = models.CharField(max_length=500)
+
+
+@receiver(post_save, sender=CustomerProfile)
+def create_user_payment(sender, instance, created, **kwargs):
+	if created:
+		UserPayment.objects.create(app_user=instance)
+
+
 class YourAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'parkingapp'
