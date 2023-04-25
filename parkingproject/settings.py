@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'parkingproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test_system',
+        'NAME': 'vehicle_parking_database',
         'USER':'root',
-        'PASSWORD':'root_toor',
+        'PASSWORD':'Saima@123',
     }
 }
 
