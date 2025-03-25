@@ -1,6 +1,6 @@
 
 # Vehicle Parking Management System
-
+dcdsf
 This project is a web-based application developed in Python using the Django framework. It provides a solution for managing parking spaces, including a payment feature using Stripe API.
 
 
